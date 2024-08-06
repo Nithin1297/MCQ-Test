@@ -1,26 +1,34 @@
-<mat-card appearance="outlined">
+<mat-card appearance="outlined" class="card">
   <mat-card-content>
     <div>
-      <h3>{{ question.question_number }}. {{ question.question }}</h3>
-      @if(question.type=='radio') {
-
-      <mat-radio-group aria-label="Select an option">
-        <div class="radioButtons">
-          <mat-radio-button value="{{ question.options[0] }}">
-            {{ question.options[0] }}</mat-radio-button
-          >
-          <mat-radio-button value="{{ question.options[0] }}">
-            {{ question.options[0] }}</mat-radio-button
-          >
-          <mat-radio-button value="{{ question.options[0] }}">
-            {{ question.options[0] }}</mat-radio-button
-          >
-          <mat-radio-button value="{{ question.options[0] }}">
-            {{ question.options[0] }}</mat-radio-button
-          >
+      <div class="radioButtons">
+        <div>
+          <h3>{{ question.question_number }}. {{ question.question }}</h3>
         </div>
-      </mat-radio-group>
-      } @else { }
+        <div>
+          @if(question.type=='radio') {
+
+          <mat-radio-group
+            aria-label="Select an option"
+            class="buttons"
+            style="font-size: large"
+          >
+            <mat-radio-button value="{{ question.options[0] }}">
+              {{ question.options[0] }}</mat-radio-button
+            >
+            <mat-radio-button value="{{ question.options[1] }}">
+              {{ question.options[1] }}</mat-radio-button
+            >
+            <mat-radio-button value="{{ question.options[2] }}">
+              {{ question.options[2] }}</mat-radio-button
+            >
+            <mat-radio-button value="{{ question.options[3] }}">
+              {{ question.options[3] }}</mat-radio-button
+            >
+          </mat-radio-group>
+          }
+        </div>
+      </div>
     </div>
   </mat-card-content>
 </mat-card>
