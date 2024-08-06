@@ -11,4 +11,9 @@ export class DataService {
       (res) => res.json()
     );
   }
+  getQuestionById(id : number) {
+    return fetch(`https://66b211521ca8ad33d4f66790.mockapi.io/Questions/${id}`).then(
+      (res) => res.json()
+    );
+  }
 }
