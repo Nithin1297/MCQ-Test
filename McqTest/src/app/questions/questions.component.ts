@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
+import { MatButton, MatButtonModule } from '@angular/material/button';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 @Component({
   selector: 'app-questions',
   standalone: true,
-  imports: [MatRadioModule, MatCardModule],
+  imports: [MatRadioModule, MatCardModule, MatButtonModule],
   templateUrl: './questions.component.html',
   styleUrl: './questions.component.scss',
 })
