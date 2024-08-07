@@ -1,0 +1,12 @@
+<div>
+    @for(list of allAnswers ; track $index){
+    <p>Question Number: {{ list.question_number }}</p>
+    <p>Question: {{ list.question }}</p>
+    <p>Correct Option: {{ list.correct_option }}</p>
+    }
+  </div>
+   
+  app.comp.html:
+   
+   <li><a routerLink="answers">Answers</a></li>
+   
