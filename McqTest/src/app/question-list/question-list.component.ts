@@ -23,10 +23,7 @@ export class QuestionListComponent {
   ngOnInit() {
     this.Id = this.route.snapshot.paramMap.get('id') as string; // 1 from URL
     this.question = this.dataService.loadQuestionByIdex(this.Id - 1);
-    this.answer = this.dataService.loadAnswerByQNo(this.Id - 1);
-    console.log(this.Id); // From URL
-    console.log(this.question);
-    console.log(this.dataService.len);
+    this.answer = this.dataService.loadAnswerByQNo(this.question);
   }
   gettingNextQuestion() {
     this.dataService.patchAnswer(this.userAns);
@@ -37,7 +34,7 @@ export class QuestionListComponent {
     this.Id = +this.Id + 1;
     this.router.navigate(['questions', this.Id]);
     this.question = this.dataService.loadQuestionByIdex(this.Id - 1);
-    this.answer = this.dataService.loadAnswerByQNo(this.Id - 1);
+    this.answer = this.dataService.loadAnswerByQNo(this.question);
   }
 
   gettingPrevQuestion() {
@@ -47,8 +44,6 @@ export class QuestionListComponent {
     this.router.navigate(['questions', this.Id]);
     this.question = this.dataService.loadQuestionByIdex(this.Id - 1);
     this.answer = this.dataService.loadAnswerByQNo(this.question);
-
-    console.log(this.answer);
   }
 
   pushing(ans: any) {
