@@ -11,6 +11,7 @@ import { DataService } from '../data.service';
 export class ScoreBoardComponent {
   percentage !: string;
   constructor(private dataService : DataService){}
+  
   getScore(){
     return this.dataService.getScoreP().then((data) => this.percentage = data)
   }

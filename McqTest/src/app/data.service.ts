@@ -65,4 +65,39 @@ export class DataService {
       (res) => res.json()
     );
   }
+
+  getAllAnswers(): any {
+    return ([
+      {
+        question_number: 1,
+        question: "What is the capital of Japan?",
+        correct_option: "Tokyo",
+      },
+      {
+        question_number: 2,
+        question: "Which of the following are programming languages?",
+        correct_option: ["Python", "Java"],
+      },
+      {
+        question_number: 3,
+        question: "What is the largest planet in our solar system?",
+        correct_option: "Jupiter",
+      },
+      {
+        question_number: 4,
+        question: "Select the primary colors:",
+        correct_option: ["Red", "Blue", "Yellow"],
+      },
+      {
+        question_number: 5,
+        question: "Which element has the chemical symbol 'O'?",
+        correct_option: ["Oxygen", "Gold", "Silver", "Hydrogen"],
+      },
+      {
+        question_number: 6,
+        question: "Which of the following are continents?",
+        correct_option: ["Africa", "Europe", "Antarctica"],
+      }
+    ]);
+  }
 }
