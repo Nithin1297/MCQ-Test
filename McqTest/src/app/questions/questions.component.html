@@ -1,41 +1,48 @@
 <mat-card appearance="outlined">
   <mat-card-content>
-    <div>
-      <div class="radioButtons">
-        <h3>{{ question.question_number }}. {{ question.question }}</h3>
-        @if(question.type=='radio') {
+    <form action="" [formGroup]="testForm">
+      <div>
+        <div class="radioButtons">
+          <h3>{{ question.question_number }}. {{ question.question }}</h3>
 
-        <mat-radio-group aria-label="Select an option" class="buttons">
-          <mat-radio-button value="{{ question.options[0] }}">
-            {{ question.options[0] }}</mat-radio-button
+          @if(question.type=='radio') {
+          <mat-radio-group
+            aria-label="Select an option"
+            class="buttons"
+            formControlName="idx"
+            (change)="pushToParent()"
           >
-          <mat-radio-button value="{{ question.options[1] }}">
-            {{ question.options[1] }}</mat-radio-button
-          >
-          <mat-radio-button value="{{ question.options[2] }}">
-            {{ question.options[2] }}</mat-radio-button
-          >
-          <mat-radio-button value="{{ question.options[3] }}">
-            {{ question.options[3] }}</mat-radio-button
-          >
-        </mat-radio-group>
-        } @else {
-        <div class="checkBox">
-          <mat-checkbox value="{{ question.options[0] }}">
-            {{ question.options[1] }}</mat-checkbox
-          >
-          <mat-checkbox value="{{ question.options[1] }}">
-            {{ question.options[1] }}</mat-checkbox
-          >
-          <mat-checkbox value="{{ question.options[2] }}">
-            {{ question.options[2] }}</mat-checkbox
-          >
-          <mat-checkbox value="{{ question.options[3] }}">
-            {{ question.options[3] }}</mat-checkbox
-          >
+            <mat-radio-button value="0">
+              {{ question.options[0] }}</mat-radio-button
+            >
+            <mat-radio-button value="1">
+              {{ question.options[1] }}</mat-radio-button
+            >
+            <mat-radio-button value="2">
+              {{ question.options[2] }}</mat-radio-button
+            >
+            <mat-radio-button value="3">
+              {{ question.options[3] }}</mat-radio-button
+            >
+          </mat-radio-group>
+          } @else {
+          <div class="checkBox">
+            <mat-checkbox value="0" formControlName="idx">
+              {{ question.options[1] }}</mat-checkbox
+            >
+            <mat-checkbox value="1" formControlName="idx">
+              {{ question.options[1] }}</mat-checkbox
+            >
+            <mat-checkbox value="2" formControlName="idx">
+              {{ question.options[2] }}</mat-checkbox
+            >
+            <mat-checkbox value="3" formControlName="idx">
+              {{ question.options[3] }}</mat-checkbox
+            >
+          </div>
+          }
         </div>
-        }
       </div>
-    </div>
+    </form>
   </mat-card-content>
 </mat-card>

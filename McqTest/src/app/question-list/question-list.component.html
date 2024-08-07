@@ -1,4 +1,9 @@
 <div class="main">
-  <app-questions [question]="question" />
-  <button mat-raised-button (click)="gettingNextQuestion()">Next</button>
+  <app-questions [question]="question" [answer]="answer"  (AnsEvent)="pushing($event)" />
+  <button mat-raised-button (click)="gettingPrevQuestion()"  >Back</button>
+  @if(question.question_number<this.dataService.len) {
+  <button mat-raised-button (click)="gettingNextQuestion()"  >Next</button>
+  } @else {
+  <button mat-raised-button (click)="submit()">Submit</button>
+  }
 </div>
