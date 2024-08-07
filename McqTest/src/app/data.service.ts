@@ -7,12 +7,12 @@ export class DataService {
   constructor() {}
 
   getAllQuestions() {
-    return fetch('https://66b211521ca8ad33d4f66790.mockapi.io/Questions').then(
+    return fetch('https://backend-project-2s74.onrender.com/form').then(
       (res) => res.json()
     );
   }
   getQuestionById(id : number) {
-    return fetch(`https://66b211521ca8ad33d4f66790.mockapi.io/Questions/${id}`).then(
+    return fetch(`https://backend-project-2s74.onrender.com/form/${id}`).then(
       (res) => res.json()
     );
   }
