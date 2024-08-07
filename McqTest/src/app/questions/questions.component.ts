@@ -3,6 +3,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { MatButton, MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { ActivatedRoute, Route, Router } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-questions',
   standalone: true,
@@ -11,6 +13,12 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
   styleUrl: './questions.component.scss',
 })
 export class QuestionsComponent {
+  Id: any;
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private sanitizer: DomSanitizer
+  ) {}
   @Input() question = {
     question_number: 1,
     question: 'What is the capital of France?',
@@ -18,8 +26,4 @@ export class QuestionsComponent {
     correct_option: 'Paris',
     type: 'radio',
   };
-  @Output() nextQuestionEvent = new EventEmitter<any>();
-  getNextQuestion() {
-    this.nextQuestionEvent.emit(this.question);
-  }
 }
