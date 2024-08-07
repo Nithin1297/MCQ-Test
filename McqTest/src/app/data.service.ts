@@ -9,7 +9,7 @@ export class DataService {
   len: any;
   constructor() {}
   getAllQuestions() {
-    return fetch('https://66b211521ca8ad33d4f66790.mockapi.io/Questions')
+    return fetch('https://backend-project-2s74.onrender.com/form/')
       .then((res) => res.json())
       .then((data) => {
         this.questions = data;
