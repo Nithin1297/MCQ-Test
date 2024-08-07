@@ -1,4 +1,15 @@
 .main
 {
     place-content: center;
+    height: 200px;
+}
+.buttons
+{
+    display: flex;
+gap: 500px;    margin-top: -175px;
+    padding-left: 270px;
+}
+mat-radio-button
+{
+    color: rgb(124, 122, 122);
 }
