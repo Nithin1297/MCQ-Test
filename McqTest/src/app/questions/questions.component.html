@@ -19,9 +19,23 @@
             {{ question.options[3] }}</mat-radio-button
           >
         </mat-radio-group>
+        } @else {
+        <div class="checkBox">
+          <mat-checkbox value="{{ question.options[0] }}">
+            {{ question.options[1] }}</mat-checkbox
+          >
+          <mat-checkbox value="{{ question.options[1] }}">
+            {{ question.options[1] }}</mat-checkbox
+          >
+          <mat-checkbox value="{{ question.options[2] }}">
+            {{ question.options[2] }}</mat-checkbox
+          >
+          <mat-checkbox value="{{ question.options[3] }}">
+            {{ question.options[3] }}</mat-checkbox
+          >
+        </div>
         }
       </div>
     </div>
-    <div class="next"></div>
   </mat-card-content>
 </mat-card>

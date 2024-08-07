@@ -5,10 +5,11 @@ import { MatButton, MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 @Component({
   selector: 'app-questions',
   standalone: true,
-  imports: [MatRadioModule, MatCardModule, MatButtonModule],
+  imports: [MatRadioModule, MatCardModule, MatButtonModule, MatCheckboxModule],
   templateUrl: './questions.component.html',
   styleUrl: './questions.component.scss',
 })
