@@ -54,5 +54,6 @@ export class QuestionListComponent {
   submit() {
     console.log('sending..');
     this.dataService.SendUserAns();
+    this.router.navigate(['/scorePage']);
   }
 }
