@@ -4,8 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class DataService {
-  questions = [];
-  answers = [];
+  questions: any = [];
   userAllAnswers: any = [];
   len: any;
   constructor() {}
@@ -22,8 +21,13 @@ export class DataService {
     return this.questions[idx];
   }
 
-  loadAnswerByIdex(idx: any) {
-    return this.userAllAnswers[idx];
+  loadAnswerByQNo(question: any) {
+    console.log(question);
+    const answer = this.userAllAnswers.find(
+      (ans: any) => ans.question_number == question.question_number
+    );
+
+    return answer;
   }
 
   getQuestionById(id: number) {
@@ -32,7 +36,17 @@ export class DataService {
     );
   }
   patchAnswer(userAns: any) {
-    this.userAllAnswers.push(userAns);
+    const qNo = this.userAllAnswers.findIndex(
+      (obj: { question_number: any }) =>
+        obj.question_number == userAns.question_number
+    );
+    if (qNo < 0) {
+      this.userAllAnswers.push(userAns);
+    } else {
+      this.userAllAnswers[qNo] = userAns;
+    }
+    console.log(userAns);
+    // this.userAllAnswers.push(userAns);
     console.log(this.userAllAnswers);
   }
   SendUserAns() {
