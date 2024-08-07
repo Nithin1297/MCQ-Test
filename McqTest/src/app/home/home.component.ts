@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-home',
@@ -10,4 +11,10 @@ import { RouterModule } from '@angular/router';
 })
 export class HomeComponent {
   id: any;
+
+  constructor(private dataService: DataService) {}
+
+  ngOnInit() {
+    this.dataService.getAllQuestions();
+  }
 }

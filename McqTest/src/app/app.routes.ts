@@ -8,9 +8,8 @@ export const routes: Routes = [
     path: '',
     component: HomeComponent,
   },
-
   {
-    path: 'question-list',
+    path: 'questions/:id',
     component: QuestionListComponent,
   },
 ];

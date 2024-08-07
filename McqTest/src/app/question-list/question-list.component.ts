@@ -11,21 +11,22 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
   styleUrl: './question-list.component.scss',
 })
 export class QuestionListComponent {
-  questionList: any;
-  Id: any = 2;
+  question: any;
+  Id: any = 1;
   constructor(
-    dataService: DataService,
+    private dataService: DataService,
     private route: ActivatedRoute,
     private router: Router
-  ) {
-    this.questionList = dataService.getQuestionById(1);
-    console.log(this.questionList);
-  }
+  ) {}
   ngOnInit() {
-    this.Id = this.route.snapshot.paramMap.get('id') as string;
+    this.Id = this.route.snapshot.paramMap.get('id') as string; // 1 from URL
+    this.question = this.dataService.loadQuestionByIdex(this.Id - 1);
     console.log(this.Id); // From URL
+    console.log(this.question);
   }
-  gettingNextQuestion(question_no: any) {
-    console.log(question_no);
+  gettingNextQuestion() {
+    this.Id = +this.Id + 1;
+    this.router.navigate(['questions', this.Id]);
+    this.question = this.dataService.loadQuestionByIdex(this.Id - 1);
   }
 }
