@@ -1,0 +1,19 @@
+<mat-card appearance="outlined" class="card">
+  <mat-card-content>
+    <form action="" [formGroup]="testForm">
+      <div>
+        <div class="checkbox">
+          <!-- <h3>{{ question.question_number }}. {{ question.question }}</h3> -->
+          @if (questions.options.length > 0) { @for (option of
+          questions.options; track $index; let i = $index) {
+          <div formArrayName="opts">
+            <mat-checkbox [formControlName]="i">
+              {{ option }}
+            </mat-checkbox>
+          </div>
+          } }
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
