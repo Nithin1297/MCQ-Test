@@ -59,4 +59,10 @@ export class DataService {
       },
     }).then((res) => res.json());
   }
+
+  getScoreP(): Promise<string> {
+    return fetch(`https://backend-project-2s74.onrender.com/form/per`).then(
+      (res) => res.json()
+    );
+  }
 }
