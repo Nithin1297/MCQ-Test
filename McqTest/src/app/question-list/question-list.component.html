@@ -11,7 +11,8 @@
 </div>
 <div class="buttons">
   <div class="back">
-  <button  mat-raised-button (click)="gettingPrevQuestion()" class="back-button"   style="
+  <button   mat-fab
+  extended (click)="gettingPrevQuestion()" class="back-button"   style="
   background-color: green;
   font-size: 15px;
   height: 30px;
@@ -20,12 +21,13 @@
   color: white;
   border: none;
   font-family: 'Times New Roman', Times, serif;
-  font-weight: 600;
+  font-weight: 400;
 " > Back</button>
 </div>
 <div class="next">
 @if(question.question_number<this.dataService.len) {
-  <button mat-raised-button (click)="gettingNextQuestion()" class="next-button"   style="
+  <button  mat-fab
+  extended (click)="gettingNextQuestion()" class="next-button"   style="
   background-color: green;
   font-size: 15px;
   height: 30px;
@@ -34,11 +36,21 @@
   color: white;
   border: none;
   font-family: 'Times New Roman', Times, serif;
-  font-weight: 500;
+  font-weight: 400;
 ">Next</button>
   } 
 @else {
-  <button (click)="submit()">Submit</button>
+  <button  mat-fab
+  extended (click)="submit()" style="
+  background-color: green;
+  font-size: 15px;
+  height: 30px;
+  width: 80px;
+  text-transform: uppercase;
+  color: white;
+  border: none;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 400;">Submit</button>
   }
 </div>
   </div>
