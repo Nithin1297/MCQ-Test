@@ -2,6 +2,8 @@
   @for (item of this.question_numbers; track $index) {
    <div class="question" (click)="navigateToQuestion(item)"><h4>{{item}}</h4></div>
   }
+
+  
 </div>
 @if(question){
   <div class="main">
