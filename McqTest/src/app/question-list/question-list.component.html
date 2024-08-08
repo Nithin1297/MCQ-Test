@@ -1,6 +1,6 @@
 <div class="questions">
   @for (item of this.question_numbers; track $index) {
-   <div class="question" (click)="navigateToQuestion(item)"><h4>{{item}}</h4></div>
+   <div class="question" (click)="navigateToQuestion(item)">{{item}}</div>
   }
 </div>
 @if(question){

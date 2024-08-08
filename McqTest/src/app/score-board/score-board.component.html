@@ -1,9 +1,26 @@
 @if (percentCheck) {
 <div class="container">
   <h1>Yay!! You got {{ percentage }} %🎉🎉</h1>
+  <button
+    mat-raised-button
+    routerLink="/Answers"
+    class="show-answer"
+    style="
+      background-color: green;
+      font-size: 18px;
+      height: 50px;
+      width: 200px;
+      text-transform: uppercase;
+      color: white;
+      border: none;
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: 500;
+      margin-left: 200px;
+    "
+  >
+    Show Answers
+  </button>
 </div>
 } @else {
-<h1>Loading</h1>
+<h1 class="loading">Loading⏳</h1>
 }
-
-<button mat-raised-button routerLink="/Answers">Show Answers</button>
