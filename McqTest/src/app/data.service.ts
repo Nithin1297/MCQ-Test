@@ -41,10 +41,12 @@ export class DataService {
       (obj: { question_number: any }) =>
         obj.question_number == userAns.question_number
     );
-    if (qNo < 0) {
-      this.userAllAnswers.push(userAns);
-    } else {
-      this.userAllAnswers[qNo] = userAns;
+    if (userAns) {
+      if (qNo < 0) {
+        this.userAllAnswers.push(userAns);
+      } else {
+        this.userAllAnswers[qNo] = userAns;
+      }
     }
     console.log(userAns);
     // this.userAllAnswers.push(userAns);
@@ -65,15 +67,13 @@ export class DataService {
           }
     );
 
-   return fetch(`https://backend-project-2s74.onrender.com/form/add`, {
+    return fetch(`https://backend-project-2s74.onrender.com/form/add`, {
       method: 'POST',
       body: JSON.stringify(convertAnsForAPI),
       headers: {
         'Content-Type': 'application/json',
       },
-    })
-      .then((res) => res.json())
-      
+    }).then((res) => res.json());
   }
 
   // getScoreP(): Promise<string> {

@@ -17,4 +17,8 @@ export class ScoreBoardComponent {
       console.log(`Percentage: ${this.percentage}`);
     });
   }
+
+  get percentCheck(){
+    return typeof this.percentage == 'number'
+  }
 }
