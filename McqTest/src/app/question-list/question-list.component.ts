@@ -24,7 +24,7 @@ export class QuestionListComponent {
   answer: any;
   Id: any;
   userAns: any;
-
+  question_numbers: any = [];
   constructor(
     public dataService: DataService,
     private route: ActivatedRoute,
@@ -36,6 +36,10 @@ export class QuestionListComponent {
       this.question = this.dataService.loadQuestionByIdex(this.Id - 1);
       this.answer = this.dataService.loadAnswerByQNo(this.question);
     });
+    for (let question in this.dataService.questions) {
+      this.question_numbers.push(+question + 1);
+      console.log(this.question_numbers);
+    }
   }
   gettingNextQuestion() {
     this.dataService.patchAnswer(this.userAns);
@@ -67,5 +71,11 @@ export class QuestionListComponent {
     console.log('sending..');
     this.dataService.patchAnswer(this.userAns);
     this.router.navigate(['/scorePage']);
+  }
+  navigateToQuestion(Qnum: any) {
+    console.log('navigation to the question', Qnum);
+    this.router.navigate([`questions`, Qnum]);
+    this.question = this.dataService.loadQuestionByIdex(Qnum - 1);
+    this.answer = this.dataService.loadAnswerByQNo(this.question);
   }
 }
