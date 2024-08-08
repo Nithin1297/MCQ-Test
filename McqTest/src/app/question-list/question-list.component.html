@@ -10,15 +10,35 @@
   <!-- <app-questions [question]="question" [answer]="answer"  (AnsEvent)="pushing($event)" /> -->
 </div>
 <div class="buttons">
-  <div class="back" >
-  <button mat-fab extended  (click)="gettingPrevQuestion()">Back</button>
+  <div class="back">
+  <button  mat-raised-button (click)="gettingPrevQuestion()" class="back-button"   style="
+  background-color: green;
+  font-size: 15px;
+  height: 30px;
+  width: 80px;
+  text-transform: uppercase;
+  color: white;
+  border: none;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+" > Back</button>
 </div>
 <div class="next">
 @if(question.question_number<this.dataService.len) {
-  <button mat-fab extended  (click)="gettingNextQuestion()"  >Next</button>
+  <button mat-raised-button (click)="gettingNextQuestion()" class="next-button"   style="
+  background-color: green;
+  font-size: 15px;
+  height: 30px;
+  width: 80px;
+  text-transform: uppercase;
+  color: white;
+  border: none;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 500;
+">Next</button>
   } 
 @else {
-  <button mat-raised-button (click)="submit()">Submit</button>
+  <button (click)="submit()">Submit</button>
   }
 </div>
   </div>

@@ -3,10 +3,12 @@
     <form action="" [formGroup]="testForm">
       <div>
         <div class="radioButtons">
-          <h3>{{ question.question_number }}. {{ question.question }}</h3>
+          <h3 class="question">
+            {{ question.question_number }}. {{ question.question }}
+          </h3>
 
           @if(question.type=='radio') {
-          <h3>
+          <h3 class="options">
             <mat-radio-group
               aria-label="Select an option"
               class="buttons"

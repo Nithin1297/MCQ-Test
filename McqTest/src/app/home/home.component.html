@@ -1,11 +1,38 @@
 <div class="home-page">
   <div>
+    <img
+      src="https://thumbs.dreamstime.com/b/tekst-van-het-quiz-de-groene-woord-op-witte-achtergrond-43028883.jpg"
+      alt="quiz-image"
+      style="height: 200px"
+    />
+    <p style="font-size: 28px; font-family: 'Times New Roman', Times, serif">
+      Ready to challenge your brain?Let’s get quizzing!
+    </p>
     <mat-form-field class="example-full-width">
       <mat-label>Name</mat-label>
       <input matInput placeholder="Enter your name" />
     </mat-form-field>
   </div>
   <div>
-    <button mat-raised-button routerLink="/questions/1">Start</button>
+    <button
+      mat-fab
+      extended
+      class="start-button"
+      routerLink="/questions/1"
+      style="
+        background-color: green;
+        font-size: larger;
+        height: 40px;
+        width: 100px;
+        text-transform: uppercase;
+        color: white;
+        letter-spacing: 1.5px;
+        border: none;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 500;
+      "
+    >
+      Start
+    </button>
   </div>
 </div>
