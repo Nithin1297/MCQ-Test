@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { DataService } from '../data.service';
+import { RouterModule } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-score-board',
   standalone: true,
-  imports: [],
+  imports: [RouterModule, MatButtonModule],
   templateUrl: './score-board.component.html',
   styleUrl: './score-board.component.scss',
 })
@@ -17,8 +19,7 @@ export class ScoreBoardComponent {
       console.log(`Percentage: ${this.percentage}`);
     });
   }
-
-  get percentCheck(){
-    return typeof this.percentage == 'number'
+  get percentCheck() {
+    return typeof this.percentage == 'number';
   }
 }
