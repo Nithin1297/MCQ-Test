@@ -50,6 +50,7 @@ export class DataService {
     // this.userAllAnswers.push(userAns);
     console.log(this.userAllAnswers);
   }
+
   SendUserAns() {
     console.log(this.userAllAnswers);
 
@@ -64,20 +65,22 @@ export class DataService {
           }
     );
 
-    fetch(`https://backend-project-2s74.onrender.com/form/add`, {
+   return fetch(`https://backend-project-2s74.onrender.com/form/add`, {
       method: 'POST',
       body: JSON.stringify(convertAnsForAPI),
       headers: {
         'Content-Type': 'application/json',
       },
-    }).then((res) => res.json());
+    })
+      .then((res) => res.json())
+      
   }
 
-  getScoreP(): Promise<string> {
-    return fetch(`https://backend-project-2s74.onrender.com/form/per`).then(
-      (res) => res.json()
-    );
-  }
+  // getScoreP(): Promise<string> {
+  //   return fetch(`https://backend-project-2s74.onrender.com/form/per`).then(
+  //     (res) => res.json()
+  //   );
+  // }
 
   getAllAnswers(): any {
     return [

@@ -6,14 +6,15 @@ import { DataService } from '../data.service';
   standalone: true,
   imports: [],
   templateUrl: './score-board.component.html',
-  styleUrl: './score-board.component.scss'
+  styleUrl: './score-board.component.scss',
 })
 export class ScoreBoardComponent {
-  percentage !: string;
-  constructor(private dataService : DataService){}
-  
-  getScore(){
-    return this.dataService.getScoreP().then((data) => this.percentage = data)
+  percentage!: number;
+  constructor(private dataService: DataService) {}
+  ngOnInit() {
+    this.dataService.SendUserAns().then((data) => {
+      this.percentage = data.percentage;
+      console.log(`Percentage: ${this.percentage}`);
+    });
   }
-
 }
