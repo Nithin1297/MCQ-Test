@@ -107,7 +107,7 @@ export class DataService {
       {
         question_number: 5,
         question: "Which element has the chemical symbol 'O'?",
-        correct_option: ['Oxygen', 'Gold', 'Silver', 'Hydrogen'],
+        correct_option: ['Oxygen'],
       },
       {
         question_number: 6,

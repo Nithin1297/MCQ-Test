@@ -1,12 +1,13 @@
-<div>
-    @for(list of allAnswers ; track $index){
-    <p>Question Number: {{ list.question_number }}</p>
-    <p>Question: {{ list.question }}</p>
-    <p>Correct Option: {{ list.correct_option }}</p>
-    }
-  </div>
-   
-  app.comp.html:
-   
-   <li><a routerLink="answers">Answers</a></li>
-   
+<div class="main">
+  @for(list of allAnswers ; track $index){
+  <mat-card appearance="outlined" class="card">
+    <mat-card-content>
+      <p><span>Question Number: </span>{{ list.question_number }}</p>
+      <p><span>Question:</span> {{ list.question }}</p>
+      <p><span>Correct Option: </span> {{ list.correct_option }}</p>
+    </mat-card-content>
+  </mat-card>
+
+  }
+</div>
+<!-- <li><a routerLink="answers">Answers</a></li> -->
