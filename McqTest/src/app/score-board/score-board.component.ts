@@ -14,10 +14,16 @@ export class ScoreBoardComponent {
   percentage!: number;
   constructor(private dataService: DataService) {}
   ngOnInit() {
-    this.dataService.SendUserAns().then((data) => {
-      this.percentage = data.percentage;
-      console.log(`Percentage: ${this.percentage}`);
-    });
+    this.dataService
+      .SendUserAns()
+      .then((data) => {
+        this.percentage = data.percentage;
+        // console.log(`Percentage: ${this.percentage}`);
+      })
+      .then(() => {
+        (this.dataService.userAllAnswers = []),
+          console.log('Final Array' + this.dataService.userAllAnswers);
+      });
   }
   get percentCheck() {
     return typeof this.percentage == 'number';
