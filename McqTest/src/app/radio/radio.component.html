@@ -8,25 +8,46 @@
           </h3>
 
           <h3>
-            <mat-radio-group
-              aria-label="Select an option"
-              class="buttons"
-              formControlName="idx"
-              (change)="pushToParent()"
-            >
-              <mat-radio-button value="0">
-                {{ question.options[0] }}</mat-radio-button
+            <div class="options-container">
+              <mat-radio-group
+                aria-label="Select an option"
+                class="buttons"
+                formControlName="idx"
+                (change)="pushToParent()"
               >
-              <mat-radio-button value="1">
-                {{ question.options[1] }}</mat-radio-button
-              >
-              <mat-radio-button value="2">
-                {{ question.options[2] }}</mat-radio-button
-              >
-              <mat-radio-button value="3">
-                {{ question.options[3] }}</mat-radio-button
-              >
-            </mat-radio-group>
+                <mat-card appearance="outlined" class="option-cards">
+                  <mat-card-content>
+                    <mat-radio-button value="0">
+                      {{ question.options[0] }}</mat-radio-button
+                    ></mat-card-content
+                  >
+                </mat-card>
+
+                <mat-card appearance="outlined" class="option-cards">
+                  <mat-card-content
+                    ><mat-radio-button value="1">
+                      {{ question.options[1] }}</mat-radio-button
+                    ></mat-card-content
+                  >
+                </mat-card>
+
+                <mat-card appearance="outlined" class="option-cards">
+                  <mat-card-content
+                    ><mat-radio-button value="2">
+                      {{ question.options[2] }}</mat-radio-button
+                    ></mat-card-content
+                  >
+                </mat-card>
+
+                <mat-card appearance="outlined" class="option-cards">
+                  <mat-card-content
+                    ><mat-radio-button value="3">
+                      {{ question.options[3] }}</mat-radio-button
+                    >
+                  </mat-card-content>
+                </mat-card>
+              </mat-radio-group>
+            </div>
           </h3>
         </div>
       </div>
