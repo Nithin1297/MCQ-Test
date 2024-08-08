@@ -36,3 +36,17 @@ gap: 500px;    margin-top: -175px;
      margin-top: 30px;
     cursor: pointer;
 }
+
+.buttons-back-next
+{
+    
+    place-content: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    bottom: 170px;   
+  
+}
+
+

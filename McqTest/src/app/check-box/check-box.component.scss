@@ -20,3 +20,35 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: 500;
 }
+
+.card
+{
+    text-align: center;
+    place-content: center;
+    width: 60%;
+    height: 480px;
+    margin: 210px auto;
+    background-color: white;
+    padding: 20px;
+    
+}
+.checkbox{
+    gap: 16px;
+}
+
+@media (max-width: 525px)
+{
+
+    card {
+        width: 95%; 
+        margin: 10px auto; 
+        padding: 15px; 
+    }
+
+    .buttons {
+        gap: 8px; 
+    }
+
+   
+    
+}

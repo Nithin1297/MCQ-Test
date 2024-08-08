@@ -8,10 +8,17 @@
           </h3>
           @if (question.options.length > 0) { @for (option of question.options;
           track $index; let idx = $index) {
-          <div formArrayName="idx">
-            <mat-checkbox [formControlName]="idx" (change)="pushToParent()">
-              {{ option }}
-            </mat-checkbox>
+          <div formArrayName="idx" class="check-box">
+            <mat-card appearance="outlined">
+              <mat-card-content
+                ><mat-checkbox
+                  [formControlName]="idx"
+                  (change)="pushToParent()"
+                >
+                  {{ option }}
+                </mat-checkbox></mat-card-content
+              >
+            </mat-card>
           </div>
           } }
         </div>
