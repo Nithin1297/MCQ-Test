@@ -1,4 +1,5 @@
-<div class="main">
+@if(question){
+  <div class="main">
     <div>
       @if (question.type == "radio") {
         <app-radio [question]="question" [answer]="answer"  (AnsEvent)="pushing($event)" />
@@ -16,3 +17,5 @@
   }
   </div>
 </div>
+}
+

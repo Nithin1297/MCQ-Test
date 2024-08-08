@@ -9,15 +9,17 @@ import { MatRadioModule } from '@angular/material/radio';
 @Component({
   selector: 'app-radio',
   standalone: true,
-  imports: [MatRadioModule,
+  imports: [
+    MatRadioModule,
     MatCardModule,
     MatButtonModule,
     MatCheckboxModule,
     FormsModule,
     MatFormFieldModule,
-    ReactiveFormsModule,],
+    ReactiveFormsModule,
+  ],
   templateUrl: './radio.component.html',
-  styleUrl: './radio.component.scss'
+  styleUrl: './radio.component.scss',
 })
 export class RadioComponent {
   @Input() question = {
@@ -33,9 +35,7 @@ export class RadioComponent {
   testForm: any;
   Id: any;
 
-  constructor(
-    private fb: FormBuilder
-  ) {
+  constructor(private fb: FormBuilder) {
     this.testForm = this.fb.group({
       idx: '',
     });
@@ -50,6 +50,7 @@ export class RadioComponent {
     }
 
     this.testForm.patchValue(this.answer);
+    console.log(this.testForm.value);
   }
 
   get idx() {
@@ -60,5 +61,4 @@ export class RadioComponent {
     this.AnsEvent.emit(userAns);
     console.log(userAns);
   }
-
 }
