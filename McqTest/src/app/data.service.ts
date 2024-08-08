@@ -52,9 +52,21 @@ export class DataService {
   }
   SendUserAns() {
     console.log(this.userAllAnswers);
+
+    const convertAnsForAPI = this.userAllAnswers.map((ans: any) =>
+      typeof ans.idx == 'string'
+        ? { ...ans, idx: [ans.idx] }
+        : {
+            ...ans,
+            idx: ans.idx
+              .map((checked: boolean, i: number) => (checked ? i + '' : null))
+              .filter((v: string | null) => v !== null),
+          }
+    );
+
     fetch(`https://backend-project-2s74.onrender.com/form/add`, {
       method: 'POST',
-      body: JSON.stringify(this.userAllAnswers),
+      body: JSON.stringify(convertAnsForAPI),
       headers: {
         'Content-Type': 'application/json',
       },

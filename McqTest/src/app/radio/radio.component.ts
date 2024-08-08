@@ -44,13 +44,11 @@ export class RadioComponent {
   ngOnChanges() {
     console.log('🎊🎊🎊🎊🎊', this.answer);
     if (!this.answer) {
-      this.answer = {
-        idx: '',
-      };
+      this.testForm.reset();
+    } else {
+      this.testForm.patchValue(this.answer);
+      console.log(this.testForm.value);
     }
-
-    this.testForm.patchValue(this.answer);
-    console.log(this.testForm.value);
   }
 
   get idx() {

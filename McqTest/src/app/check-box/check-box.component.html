@@ -6,7 +6,7 @@
           <h3>{{ question.question_number }}. {{ question.question }}</h3>
           @if (question.options.length > 0) { @for (option of question.options;
           track $index; let idx = $index) {
-          <div formArrayName="Options">
+          <div formArrayName="idx">
             <mat-checkbox [formControlName]="idx" (change)="pushToParent()">
               {{ option }}
             </mat-checkbox>
