@@ -65,7 +65,7 @@ export class QuestionListComponent {
   }
   submit() {
     console.log('sending..');
-    
+    this.dataService.patchAnswer(this.userAns);
     this.router.navigate(['/scorePage']);
   }
 }
