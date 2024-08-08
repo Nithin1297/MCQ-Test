@@ -1,0 +1,38 @@
+.radioButtons
+{
+  
+    // padding-left: 30px;
+    // padding-top: 30px;
+    font-size: large;
+    text-align: center;
+    // padding-top: 200px;
+    // width: 400px;
+}
+.card
+{
+    text-align: center;
+    place-content: center;
+    width: 700px;
+    height: 300px;
+    margin: 210px auto;
+}
+.buttons
+{
+    display: flex;
+    flex-direction: column;
+   font-size: large;
+   text-align: left;
+}
+
+.next
+{
+    padding-left: 435px;
+}
+.checkBox
+{
+    display: flex;
+    flex-direction: column;
+}
+h3{
+    text-align: left;
+}

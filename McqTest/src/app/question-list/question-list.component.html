@@ -1,6 +1,11 @@
 <div class="main">
     <div>
-  <app-questions [question]="question" [answer]="answer"  (AnsEvent)="pushing($event)" />
+      @if (question.type == "radio") {
+        <app-radio [question]="question" [answer]="answer"  (AnsEvent)="pushing($event)" />
+      }@else {
+        <app-check-box [question]="question" [answer]="answer"  (AnsEvent)="pushing($event)" />
+      }
+  <!-- <app-questions [question]="question" [answer]="answer"  (AnsEvent)="pushing($event)" /> -->
 </div>
 <div class="buttons">
   <button mat-raised-button (click)="gettingPrevQuestion()"  >Back</button>

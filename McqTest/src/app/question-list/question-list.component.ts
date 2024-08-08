@@ -3,11 +3,13 @@ import { QuestionsComponent } from '../questions/questions.component';
 import { DataService } from '../data.service';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
+import { RadioComponent } from "../radio/radio.component";
+import { CheckBoxComponent } from "../check-box/check-box.component";
 
 @Component({
   selector: 'app-question-list',
   standalone: true,
-  imports: [QuestionsComponent, RouterModule, MatButtonModule],
+  imports: [QuestionsComponent, RouterModule, MatButtonModule, RadioComponent, CheckBoxComponent],
   templateUrl: './question-list.component.html',
   styleUrl: './question-list.component.scss',
 })
